@@ -1,4 +1,4 @@
-//slet pn=10; // peoples number
+
 let pn;
 let cw=600; // canvas width
 let ch=600; // canvas height
@@ -14,7 +14,8 @@ let fact = [1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800, 47
 
 function setup() {
   createCanvas(2*cw, ch);
-  pnslider = createSlider(1,20);
+  pnslider = createSlider(1,25,5);
+  pnslider.position(cw + 50,50);
   //noLoop();
 }
 
@@ -61,13 +62,16 @@ function draw() {
       // plot x and y axis
       refx=cw;
       refy=ch-10;
+     
+    
       line(refx, refy, 2*cw-10,ch-10);
       line(refx, refy,cw, 10);
       // plot complexity in relation to people number
-      step=10;
-      for (var i=0; i<=pn;i++) {
+      step=50;
+      for (var i=0; i<pn;i++) {
         //point(refx + i*step ,refy - (i*i - i));
-        point(refx + i*step ,refy - totalSocInts(i));
+        //point(refx + i*step ,refy - totalSocInts(i));
+        ellipse(refx + i*step ,refy - totalSocInts(i),10);
 
       }
     }
@@ -81,7 +85,6 @@ function draw() {
         return rval;
     }
 
-    
     // draw peoples
     for(i=0;i<=pn;i++){
       angle=i * radians(360 / pn);
@@ -94,8 +97,8 @@ function draw() {
     
     let total=totalSocInts(pn);
 
-    text("Peoples : " + pn,cw - 100,10);
-    text("Number of social interactions : " + total,cw - 200,50);
+    text("Number of peoples : " + pn,cw + 50,100);
+    text("Number of social interactions : " + total,cw + 50,120);
     // draw complexity graph
     drawComplexityGraph()
 }
