@@ -99,6 +99,19 @@ function draw() {
 
     text("Number of peoples : " + pn,cw + 50,100);
     text("Number of social interactions : " + total,cw + 50,120);
+    
+    // axes labels
+    push();
+    translate(cw-10,200);
+    rotate(-PI/2);
+    text("Number of social interactions", 0, 0);
+    pop();
+    push();
+    translate(cw + 400,580);
+    text("Number of participants", 0, 0);
+    pop();
+
+
     // draw complexity graph
     drawComplexityGraph()
 }
