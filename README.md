@@ -1,4 +1,5 @@
 # two-Pizza-Team
+
 Visualizing teams and groups complexity as size grows.
 
 To play with the simulation browse to index.html and increase the number of people in the group (slider). 
